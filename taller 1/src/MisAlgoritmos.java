@@ -3,8 +3,10 @@ public class MisAlgoritmos implements Busquedas, Ordenamientos {
     @Override
     public int linearSearch(int[] arrayPorExplorar, int elementoABuscar) {
         int tamnoLista = arrayPorExplorar.length;
-        for (int i = 0; i < tamnoLista-1; i++) {
+        for (int i = 0; i < tamnoLista; i++) {
             int elementoActual = arrayPorExplorar[i];
+            System.out.println("elemento en i");
+            System.out.println(elementoActual);
             if(elementoActual == elementoABuscar){
                 return i;
             }
@@ -16,6 +18,7 @@ public class MisAlgoritmos implements Busquedas, Ordenamientos {
     @Override
     public int binarySearch(int[] arrayPorExplorar, int elementoABuscar) {
         return 0;
+        // codigo de busqueda binario
     }
 
     @Override
