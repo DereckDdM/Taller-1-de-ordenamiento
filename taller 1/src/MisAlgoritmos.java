@@ -5,8 +5,7 @@ public class MisAlgoritmos implements Busquedas, Ordenamientos {
         int tamnoLista = arrayPorExplorar.length;
         for (int i = 0; i < tamnoLista; i++) {
             int elementoActual = arrayPorExplorar[i];
-            System.out.println("elemento en i");
-            System.out.println(elementoActual);
+
             if(elementoActual == elementoABuscar){
                 return i;
             }
@@ -16,9 +15,23 @@ public class MisAlgoritmos implements Busquedas, Ordenamientos {
     }
 
     @Override
-    public int binarySearch(int[] arrayPorExplorar, int elementoABuscar) {
-        return 0;
-        // codigo de busqueda binario
+    public int binarySearch(int[] segundoArray, int elementoABuscar) {
+        int izquierdo = 0;
+        int derecho = segundoArray.length;
+        int medio = (izquierdo + derecho) / 2;
+        while (izquierdo <= derecho) {
+            if (segundoArray[medio] > elementoABuscar) {
+                izquierdo = medio + 1;
+            } else if (segundoArray[medio] < elementoABuscar) {
+                derecho = medio - 1;
+            } else {
+                return medio;
+            }
+            medio = (izquierdo + derecho) / 2;
+        }
+
+        return -1;
+
     }
 
     @Override
